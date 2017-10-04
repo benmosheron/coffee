@@ -1,0 +1,17 @@
+{
+  "name": "ben-loves-coffee",
+  "version": "1.0.0",
+  "description": "Leather lane coffee shops analysis",
+  "main": "coffee.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "coffee"
+  ],
+  "author": "Ben Sheron",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "ben-loves-vectors": "0.0.3"
+  }
+}
