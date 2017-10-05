@@ -42,10 +42,10 @@ const stuff = {
         // Scores for each shop, in each category
         "scores": new Vector([
             //  Q,  A,  D
-            [ 0, 10,  8], // Prufrock
-            [ 0,  6,  9], // Department
-            [ 0,  8,  6], // Toilet
-            [ 10,  5, 10], // Office
+            [ 8,  8,  6], // Prufrock
+            [ 9,  6,  7], // Department
+            [ 9,  8,  5], // Toilet
+            [ 4,  3, 10], // Office
         ])
     },
 }
