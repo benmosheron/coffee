@@ -7,13 +7,6 @@ const categories = new Vector([
     "Distance",
 ]).transpose();
 
-// Weights between 0 and 1 of each category (0 = don't care, 1 = really do care quite a bit).
-const weights = new Vector([
-    1, // Coffee Quality
-    1, // Atmosphere
-    0.2, // Distance
-]).transpose();
-
 // Shops to judge
 const shops = new Vector([
     "Prufrock",
@@ -22,15 +15,40 @@ const shops = new Vector([
     "Office", 
 ]).transpose();
 
-// Ben's scores for each shop, in each category
-const scores = new Vector([
-  //  Q,  A,  D
-    [ 9, 10,  8], // Prufrock
-    [10,  6,  9], // Department
-    [ 8,  8,  6], // Toilet
-    [ 4,  5, 10], // Office
-]);
-
+const stuff = {
+    "Ben": {
+        // Weights between 0 and 1 of each category (0 = don't care, 1 = really do care quite a bit).
+        "weights": new Vector([
+            1, // Coffee Quality
+            1, // Atmosphere
+            0.2, // Distance
+        ]).transpose(),
+        // Scores for each shop, in each category
+        "scores": new Vector([
+            //Q,  A,  D
+            [ 9, 10,  8], // Prufrock
+            [10,  6,  9], // Department
+            [ 8,  8,  6], // Toilet
+            [ 4,  5, 10], // Office
+        ])
+    },
+    "Pete": {
+        // Weights between 0 and 1 of each category (0 = don't care, 1 = really do care quite a bit).
+        "weights": new Vector([
+            1, // Coffee Quality
+            1, // Atmosphere
+            0.2, // Distance
+        ]).transpose(),
+        // Scores for each shop, in each category
+        "scores": new Vector([
+            //  Q,  A,  D
+            [ 0, 10,  8], // Prufrock
+            [ 0,  6,  9], // Department
+            [ 0,  8,  6], // Toilet
+            [ 10,  5, 10], // Office
+        ])
+    },
+}
 
 // A function to pretty print the results
 function pretty(title, thing, labels){
@@ -48,8 +66,11 @@ function pretty(title, thing, labels){
 }
 
 // CALCULATE
-// Normalise the weights to add up to one.
-const normalisedWeights = weights.divideScalar(weights.cascadeReduce((p,n) => p + n, 0));
-
-pretty("Scores:", scores.matrixMultiply(normalisedWeights), shops);
-pretty("Normalised Weights:", normalisedWeights, categories);
+Object.keys(stuff).forEach(function(who, i){
+    const weights = stuff[who].weights;
+    const scores = stuff[who].scores;
+    // Normalise the weights to add up to one.
+    const normalisedWeights = weights.divideScalar(weights.cascadeReduce((p,n) => p + n, 0));
+    pretty(`${who}'s Scores:`, scores.matrixMultiply(normalisedWeights), shops);
+    pretty(`${who}'s Normalised Weights:`, normalisedWeights, categories);
+})
