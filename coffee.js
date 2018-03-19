@@ -6,7 +6,7 @@ const categories = new Vector([
     "Atmosphere",
     "Distance",
     "InsecureMuggles",
-    ""
+    "Staff"
 ]).transpose();
 
 // Shops to judge
@@ -15,8 +15,7 @@ const shops = new Vector([
     "Department",
     "Toilet",
     "Office",
-    "Craft",
-    "Staff"
+    "Craft"
 ]).transpose();
 
 const stuff = {
@@ -26,14 +25,16 @@ const stuff = {
             1, // Coffee Quality
             1, // Atmosphere
             0.2, // Distance
+            0, // InsecureMuggles
+            0, // Staff
         ]).transpose(),
         // Scores for each shop, in each category
         "scores": new Vector([
             //Q,  A,  D
-            [ 9, 10,  8], // Prufrock
-            [10,  6,  9], // Department
-            [ 8,  8,  6], // Toilet
-            [ 4,  5, 10], // Office
+            [ 9, 10,  8, 0, 0], // Prufrock
+            [10,  6,  9, 0, 0], // Department
+            [ 8,  8,  6, 0, 0], // Toilet
+            [ 4,  5, 10, 0, 0], // Office
         ])
     },
     "Paul": {
@@ -61,14 +62,16 @@ const stuff = {
             1, // Coffee Quality
             1, // Atmosphere
             0.2, // Distance
+            0, // InsecureMuggles
+            0, // Staff
         ]).transpose(),
         // Scores for each shop, in each category
         "scores": new Vector([
             //  Q,  A,  D
-            [ 8,  8,  6], // Prufrock
-            [ 9,  6,  7], // Department
-            [ 9,  8,  5], // Toilet
-            [ 4,  3, 10], // Office
+            [ 8,  8,  6, 0, 0], // Prufrock
+            [ 9,  6,  7, 0, 0], // Department
+            [ 9,  8,  5, 0, 0], // Toilet
+            [ 4,  3, 10, 0, 0], // Office
         ])
     },
 }
