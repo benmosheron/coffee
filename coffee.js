@@ -35,6 +35,7 @@ const stuff = {
             [10,  6,  9, 0, 0], // Department
             [ 8,  8,  6, 0, 0], // Toilet
             [ 4,  5, 10, 0, 0], // Office
+            [ 10,  10, 10, 10, 10], // Craft
         ])
     },
     "Paul": {
@@ -72,6 +73,7 @@ const stuff = {
             [ 9,  6,  7, 0, 0], // Department
             [ 9,  8,  5, 0, 0], // Toilet
             [ 4,  3, 10, 0, 0], // Office
+            [ 10,  10, 10, 10, 10], // Craft
         ])
     },
 }
