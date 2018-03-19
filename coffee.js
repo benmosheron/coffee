@@ -5,6 +5,8 @@ const categories = new Vector([
     "Coffee Quality",
     "Atmosphere",
     "Distance",
+    "InsecureMuggles",
+    ""
 ]).transpose();
 
 // Shops to judge
@@ -12,7 +14,9 @@ const shops = new Vector([
     "Prufrock",
     "Department",
     "Toilet",
-    "Office", 
+    "Office",
+    "Craft",
+    "Staff"
 ]).transpose();
 
 const stuff = {
