@@ -5,6 +5,8 @@ const categories = new Vector([
     "Coffee Quality",
     "Atmosphere",
     "Distance",
+    "InsecureMuggles",
+    "Staff"
 ]).transpose();
 
 // Shops to judge
@@ -12,7 +14,8 @@ const shops = new Vector([
     "Prufrock",
     "Department",
     "Toilet",
-    "Office", 
+    "Office",
+    "Craft"
 ]).transpose();
 
 const stuff = {
@@ -22,14 +25,36 @@ const stuff = {
             1, // Coffee Quality
             1, // Atmosphere
             0.2, // Distance
+            0, // InsecureMuggles
+            0, // Staff
         ]).transpose(),
         // Scores for each shop, in each category
         "scores": new Vector([
             //Q,  A,  D
-            [ 9, 10,  8], // Prufrock
-            [10,  6,  9], // Department
-            [ 8,  8,  6], // Toilet
-            [ 4,  5, 10], // Office
+            [ 9, 10,  8, 0, 0], // Prufrock
+            [10,  6,  9, 0, 0], // Department
+            [ 8,  8,  6, 0, 0], // Toilet
+            [ 4,  5, 10, 0, 0], // Office
+            [ 10,  10, 10, 10, 10], // Craft
+        ])
+    },
+    "Paul": {
+        // Weights between 0 and 1 of each category (0 = don't care, 1 = really do care quite a bit).
+        "weights": new Vector([
+            1, // Coffee Quality
+            1, // Atmosphere
+            0.2, // Distance
+            0.7, // InsecureMuggles
+            1, // Staff
+        ]).transpose(),
+        // Scores for each shop, in each category
+        "scores": new Vector([
+            //Q,  A,  D, I, S
+            [ 9, 10,  8, 7, 8], // Prufrock
+            [10,  6,  9, 10, 7], // Department
+            [ 8,  8,  6, 3, 9], // Toilet
+            [ 1,  0, 10, 10, 0], // Office
+            [ 10,  10, 9, 2, 10], // Craft
         ])
     },
     "Pete": {
@@ -38,14 +63,17 @@ const stuff = {
             1, // Coffee Quality
             1, // Atmosphere
             0.2, // Distance
+            0, // InsecureMuggles
+            0, // Staff
         ]).transpose(),
         // Scores for each shop, in each category
         "scores": new Vector([
             //  Q,  A,  D
-            [ 8,  8,  6], // Prufrock
-            [ 9,  6,  7], // Department
-            [ 9,  8,  5], // Toilet
-            [ 4,  3, 10], // Office
+            [ 8,  8,  6, 0, 0], // Prufrock
+            [ 9,  6,  7, 0, 0], // Department
+            [ 9,  8,  5, 0, 0], // Toilet
+            [ 4,  3, 10, 0, 0], // Office
+            [ 10,  10, 10, 10, 10], // Craft
         ])
     },
 }
